@@ -1,0 +1,5 @@
+Flask==0.12.2
+gunicorn==19.6.0
+juspay==1.1.2
+requests==2.13.0
+urllib3==1.16

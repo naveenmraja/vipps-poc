@@ -38,13 +38,15 @@ def isAvailable(param) :
 @app.route("/orders/create", methods = ["POST"])
 def create_order() :
 	amount = request.json.get('amount')
+	order_id = generateRandomReferenceId('VIPPSPOC')
 	customer_email = ''
 	customer_phone = ''
 	if isAvailable(request.json.get('customer_email')) :
 		customer_email = request.json.get('customer_email')
 	if isAvailable(request.json.get('customer_phone')) :
 		customer_phone = request.json.get('customer_phone')
-	order_id = generateRandomReferenceId('VIPPSPOC')
+	if isAvailable(request.json.get('order_id')) :
+		order_id = request.json.get('order_id')
 	try :
 		params = {
 		'order_id' : order_id,

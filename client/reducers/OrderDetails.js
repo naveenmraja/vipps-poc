@@ -34,8 +34,12 @@ import {
 	ENDPOINT
 } from '../constants/config'
 
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 const initialState = {
-	orderId : '',
+	orderId : 'VIPPSPOC' + getRandomInt(10000,1000000000),
 	merchantId : MERCHANT_ID,
 	endpoint : ENDPOINT,
 	merchantName : MERCHANT_NAME,

@@ -72,6 +72,7 @@ class PaymentView extends Component {
 				} else {
 					this.props.showLoader()
 					var params = {
+						'order_id' : this.props.orderId,
 						'amount' : this.props.amount,
 						'customer_email' : this.props.shippingEmail,
 						'customer_phone' : this.props.customerPhone
